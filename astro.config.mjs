@@ -17,18 +17,26 @@ export default defineConfig({
           items: [
             // Each item here is one entry in the navigation menu.
             {label: 'Get Started', slug: 'guides/getting-started'},
-			{label: 'NVIDIA', slug: 'hyde/nvidia'},
-			// {label: 'Configuration', slug: 'guides/configuration'},
+            {label: 'NVIDIA', slug: 'hyde/nvidia'},
+            // {label: 'Configuration', slug: 'guides/configuration'},
           ],
         },
         {
-          label: 'Theming',
-          autogenerate: {directory: 'themes'},
+          label: 'Installation & Management',
+          autogenerate: {directory: 'hyde/installation_management'},
         },
-		{
-			label: 'HyDErated (extensions)',
-			autogenerate: {directory: 'extensions'},
-		},
+        {
+          label: 'Configuration',
+          autogenerate: {directory: 'hyde/configuration'},
+        },
+        {
+          label: 'Theming',
+          autogenerate: {directory: 'hyde-gallery'},
+        },
+        {
+          label: 'Extended',
+          autogenerate: {directory: 'extensions'},
+        },
         {
           label: 'Reference',
           items: [{label: 'FAQs', slug: 'reference/faqs'}],
