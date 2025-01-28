@@ -31,7 +31,13 @@ export default defineConfig({
         },
         {
           label: 'Theming',
-          autogenerate: {directory: 'hyde-gallery'},
+          items: [
+            { label: 'Making Themes', slug: 'themes/making-themes' },
+            {
+              label: 'Theme Gallery',
+              autogenerate: { directory: 'themes/hyde-gallery' }
+            }
+          ]
         },
         {
           label: 'Extended',
