@@ -102,7 +102,7 @@ export default defineConfig({
 (...)
 ```
 
-4. More
+4. Miscellaneous
 
 - Maintain the same filenames and structure as the original content.
 - **You do not need to translate everything immediately**—just push the structure and translate progressively. If a translation is missing, Starlight will fall back to the default language and display a notice that the page is not yet translated.
