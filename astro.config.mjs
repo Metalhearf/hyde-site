@@ -1,37 +1,20 @@
 // @ts-check
 import starlight from '@astrojs/starlight';
-import {defineConfig} from 'astro/config';
+import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  redirects: {
-    '/': '/en', // Prevents 404's on root domain.
-  },
   integrations: [
     starlight({
       title: 'The HyDE project',
-      // Set English as the default language for this site.
-      defaultLocale: 'en',
+      defaultLocale: 'root',
       locales: {
-        en: {
-          label: 'English',
-        },
-        es: {
-          label: 'Español',
-          lang: 'es',
-        },
-        de: {
-          label: 'Deutsch',
-          lang: 'de',
-        },
-        nl: {
-          label: 'Nederlands',
-          lang: 'nl',
-        },
-        zh: {
-          label: '中文',
-          lang: 'zh',
-        },
+        root: { label: 'English', lang: 'en' },
+        es: { label: 'Español', lang: 'es' },
+        de: { label: 'Deutsch', lang: 'de' },
+        nl: { label: 'Nederlands', lang: 'nl' },
+        zh: { label: '中文', lang: 'zh' },
+        fr: { label: 'Français', lang: 'fr' },
       },
       social: {
         github: 'https://github.com/HyDE-Project',
@@ -39,32 +22,48 @@ export default defineConfig({
       },
       sidebar: [
         {
-          label: 'Start Here',
-          autogenerate: {directory: 'start_here'},
+          label: '🚀 Getting Started',
+          items: [
+            { label: 'Introduction', slug: 'getting-started/introduction' },
+            { label: 'Installation', slug: 'getting-started/installation' },
+            { label: 'Update', slug: 'getting-started/update' },
+          ],
         },
         {
-          label: 'Guides',
-          autogenerate: {directory: 'guides'},
+          label: '🌟 Features',
+          items: [
+            { label: 'HyDE CLI', slug: 'features/cli' },
+            { label: 'HyprPanel', slug: 'features/hyprpanel' },
+          ],
         },
         {
-          label: 'Installation & Management',
-          autogenerate: {directory: 'installation_management'},
+          label: '🛠️ Configuring',
+          items: [
+            { label: 'Hyprland', slug: 'configuring/hyprland' },
+            { label: 'Restore Configuration', slug: 'configuring/restore' },
+          ],
         },
         {
-          label: 'Configuration',
-          autogenerate: {directory: 'configuration'},
+          label: '🎨 Theming',
+          items: [
+            { label: 'HyDE Gallery', slug: 'theming/gallery' },
+            { label: 'Making Themes', slug: 'theming/making-themes' },
+          ],
         },
         {
-          label: 'Theming',
-          autogenerate: {directory: 'themes'},
+          label: '🧩 Extensions',
+          items: [
+            { label: 'SwayOSD', slug: 'extensions/swayosd' },
+          ],
         },
         {
-          label: 'Extensions',
-          autogenerate: {directory: 'extensions'},
-        },
-        {
-          label: 'Reference',
-          items: [{label: 'FAQs', slug: 'reference/faqs'}],
+          label: '📚 Resources & Help',
+          items: [
+            { label: 'FAQ', slug: 'resources/faq' },
+            { label: 'Roadmap', slug: 'resources/roadmap' },
+            { label: 'NVIDIA Support', slug: 'resources/nvidia' },
+            { label: 'Tools', slug: 'resources/tools' },
+          ],
         },
       ],
     }),
